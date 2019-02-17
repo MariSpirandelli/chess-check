@@ -2,9 +2,12 @@
   "name": "chess-check",
   "version": "1.0.0",
   "description": "Simple application to give you the next two moviments \u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[Dpossible moviments of the knight chess piece",
-  "main": "server.js",
+  "main": "/app/server.ts",
   "scripts": {
-    "test": "test\u001b[D\u001b[D\u001b[D\u001b[Druntest"
+    "test": "test\u001b[D\u001b[D\u001b[D\u001b[Druntest",
+    "tsc": "tsc",
+    "start": "tsc && nodemon ./build/server.js",
+    "debug": "tsc && node --inspect ./build/server.js"
   },
   "repository": {
     "type": "git",
@@ -17,12 +20,13 @@
   },
   "homepage": "https://github.com/MariSpirandelli/chess-check#readme",
   "dependencies": {
+    "@types/express": "^4.16.1",
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
     "express": "^4.16.4"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0"
+    "@types/cors": "^2.8.4",
+    "typescript": "^3.3.3"
   }
 }

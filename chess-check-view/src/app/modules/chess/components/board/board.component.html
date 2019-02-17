@@ -1,0 +1,12 @@
+<div class="board">
+  <div fxLayout="row" *ngFor="let row of board.cells">
+    <div class="cell" [ngClass]="cell.colour" *ngFor="let cell of row; let i = index" (click)="selectedCell(cell)">
+      <div *ngIf="!cell.content">
+        teste
+      </div>
+      <div class="text-center" *ngIf="cell.content" [innerHTML]="cell.content"></div>
+    </div>
+  </div>
+</div>
+       
+  

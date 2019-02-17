@@ -1,0 +1,24 @@
+.board{
+   
+}
+
+.cell {
+    border: 1px solid black;
+    cursor: pointer;    
+}
+
+.cell.black {
+    background: black;
+    color: black;
+};
+
+.cell.white {
+    background-color: white;
+    color: white;
+}
+
+.cell.green {
+    background-color: green;
+    width: 30px;
+    height: 30px;
+}
