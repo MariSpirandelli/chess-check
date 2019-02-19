@@ -10,9 +10,7 @@ const regexp = new RegExp('^[A-H][1-8]$');
 
 exports.get = (req:any, res:any) => {
     const position = req.params['position'];
-    console.log(position);
     let test = regexp.test(position);
-    console.log(test);
     if(test) {
         let knight = new Knight(position);    
         let possibleMoves = board.getNextMoves(knight);
