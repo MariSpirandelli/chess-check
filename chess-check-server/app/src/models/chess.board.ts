@@ -3,7 +3,7 @@ import { Piece } from './abstract.piece';
 
 export class ChessBoard {
 
-    public static columns = Array.from({ length: 8 }, (v, k) => k).map(i => String.fromCharCode(i + 97));
+    public static columns = Array.from({ length: 8 }, (v, k) => k).map(i => String.fromCharCode(i + 65));
     private static rows = Array.from({ length: 8 }, (v,k) => k);
 
     constructor () {

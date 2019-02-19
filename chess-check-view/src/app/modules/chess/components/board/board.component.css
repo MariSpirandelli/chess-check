@@ -1,5 +1,18 @@
+.chess-moves-board{
+    /* border: 1px solid blue; */
+    width: 80vw;
+    height: 80vh;
+}
+
+.chess-div-board{
+    height: 100%;
+}
+
 .board{
-   
+   border: 5px groove chocolate; 
+   max-width: 75vh;
+   height: 100%;
+   box-shadow: 0px 1px 5px;
 }
 
 .cell {
@@ -10,6 +23,7 @@
 .cell.black {
     background: black;
     color: black;
+    box-shadow: 0px 1px 2px;
 };
 
 .cell.white {
@@ -19,6 +33,27 @@
 
 .cell.green {
     background-color: green;
-    width: 30px;
-    height: 30px;
+    font-size: 2vw;
+}
+
+.cell.first-turn{
+    background-color: greenyellow;
+    border: 2px solid darkgreen;
+    
+}
+
+.cell.first-turn-opacity{
+    background-color: greenyellow;
+    opacity: 0.5;
+}
+
+.cell.second-turn{
+    background-color: coral;
+    border: 2px solid brown;
+    
+}
+
+.cell.second-turn-opacity{
+    background-color: coral;
+    opacity: 0.5;
 }

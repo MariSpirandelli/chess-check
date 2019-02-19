@@ -11,6 +11,7 @@ import { MainPageComponent } from './modules/main-page/main-page.component';
 import { RouterModule } from '@angular/router';
 import { AppRoutesModule } from './routes/app.routes.module';
 import { BoardComponent } from './modules/chess/components/board/board.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { BoardComponent } from './modules/chess/components/board/board.component
     BoardComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,

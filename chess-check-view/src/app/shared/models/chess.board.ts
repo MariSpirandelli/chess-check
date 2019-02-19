@@ -5,7 +5,7 @@ export class ChessBoard {
     private cellsColours = ['white', 'black'];
 
     public cells: Cell[][];
-    public column = Array.from({ length: 8 }, (v, k) => k).map(i => String.fromCharCode(i + 97));
+    public column = Array.from({ length: 8 }, (v, k) => k).map(i => String.fromCharCode(i + 65));
 
     constructor(rows: number, columns: number) {
         this.cells = new Array<Array<Cell>>();
@@ -18,5 +18,14 @@ export class ChessBoard {
             }
             this.cells.push(row);
         }
+    }
+
+    public resetBoard() {
+        this.cells.map((r, i) => {
+            r.map((c, j) => {
+                c.colour = this.cellsColours[(j + i) % 2];
+                c.content = '';
+                });
+            });
     }
 }

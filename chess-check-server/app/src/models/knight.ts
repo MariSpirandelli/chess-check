@@ -22,7 +22,7 @@ export class Knight extends Piece {
         let possibleMoves = this.findMoves(currRow, currColumn);
         
         for(let i=0; i< possibleMoves.length; i++){
-            let finalCell = possibleMoves[i].finalCell;
+            let finalCell = possibleMoves[i].FinalCell;
             const nextRow = board.getRowIndex(finalCell.id);
             const nextColumn  = board.getColumnIndex(finalCell.id);
             let next = this.findMoves(nextRow, nextColumn);
