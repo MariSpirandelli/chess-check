@@ -33,7 +33,7 @@
 
 .cell.green {
     background-color: green;
-    font-size: 2vw;
+    font-size: 2.5em;
 }
 
 .cell.first-turn{
@@ -56,4 +56,10 @@
 .cell.second-turn-opacity{
     background-color: coral;
     opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+    .board{
+        height: 75vw;
+    }
 }

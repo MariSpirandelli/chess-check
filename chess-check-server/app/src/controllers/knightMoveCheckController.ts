@@ -12,7 +12,7 @@ exports.get = (req:any, res:any) => {
     const position = req.params['position'];
     let test = regexp.test(position);
     if(test) {
-        let knight = new Knight(position);    
+        let knight = new Knight(position); 
         let possibleMoves = board.getNextMoves(knight);
         res.status(200).send(new ReturnDTO(null, possibleMoves));
     }else{

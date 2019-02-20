@@ -9,7 +9,7 @@ export class ChessBoard {
 
     constructor(rows: number, columns: number) {
         this.cells = new Array<Array<Cell>>();
-        for (let i = rows; i >= 0; i--) {
+        for (let i = rows; i > 0; i--) {
             const row: Cell[]  = new Array<Cell>();
             for (let j = 0; j < columns; j++) {
                 const id = `${this.column[j]}${i}`;

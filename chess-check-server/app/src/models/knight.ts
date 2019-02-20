@@ -16,6 +16,7 @@ export class Knight extends Piece {
         this._currentPosition = currentPosition;
     }
 
+    // calculates all next possible moves of a Knight from the current position
     public nextPossibleMoves(turns:number, board:ChessBoard): Move[]{
         const currRow = board.getRowIndex(this._currentPosition);
         const currColumn  = board.getColumnIndex(this._currentPosition);
@@ -31,6 +32,7 @@ export class Knight extends Piece {
         return possibleMoves;
     }
 
+    // find all the final positions and the path to it
     private findMoves(currRow:number, currColumn:number): Move[]{
         let possibleMoves = new Array<Move>();
         for(let i= 0; i<8; i++){
@@ -49,32 +51,33 @@ export class Knight extends Piece {
         return possibleMoves;
     }
 
+    // find out the path for the given final position and the movements
     private findPath(currRow:number, currColumn:number, verticallyMoves: number, horizontallyMoves:number): Cell[]{
         let path = new Array<Cell>();
         let column = currColumn;
         let row = currRow;
         if( Math.abs(horizontallyMoves) == 2){
-            for(let i=1; i<= Math.abs(horizontallyMoves); i++){
+            for(let i=1; i<= 2; i++){
                 column +=  (Math.sign(horizontallyMoves))
                 let id = `${ChessBoard.columns[column]}${row+1}`;
                 path.push(new Cell(id));
             }
-            for(let i=1; i<= Math.abs(verticallyMoves); i++){
-                row += (Math.sign(verticallyMoves))
-                let id = `${ChessBoard.columns[column]}${row+1}`;
-                path.push(new Cell(id));
-            }
+            
+            row += (Math.sign(verticallyMoves))
+            let id = `${ChessBoard.columns[column]}${row+1}`;
+            path.push(new Cell(id));
+            
         }else{
-            for(let i=1; i<= Math.abs(verticallyMoves); i++){
+            for(let i=1; i<= 2; i++){
                 row += (Math.sign(verticallyMoves))
                 let id = `${ChessBoard.columns[column]}${row+1}`;
                 path.push(new Cell(id));
             }
-            for(let i=1; i<= Math.abs(horizontallyMoves); i++){
-                column +=  (Math.sign(horizontallyMoves))
-                let id = `${ChessBoard.columns[column]}${row+1}`;
-                path.push(new Cell(id));
-            }
+            
+            column +=  (Math.sign(horizontallyMoves))
+            let id = `${ChessBoard.columns[column]}${row+1}`;
+            path.push(new Cell(id));
+            
         }
         return path;
     }

@@ -1,5 +1,5 @@
 <div class="chess-moves-board" fxFlex fxLayout="column" fxLayoutGap="20px">
-  <div fxLayout="row" fxFlex="20%" fxLayoutGap="20px" fxLayoutAlign="center center">
+  <div fxLayout="row" fxFlex="10%" fxLayoutGap="20px" fxLayoutAlign="center center">
     <button [disabled]="!selected" (click)="showMoves()" mat-stroked-button color="primary">Show Moves</button>
     <section class="example-section">
       <mat-checkbox [disabled]="!moves" class="example-margin" #second name="secondTurn" (change)="checkChange()" [(ngModel)]="showSecondTurn">Show 2º move</mat-checkbox>
@@ -7,7 +7,7 @@
   </div>
   <div class="chess-div-board" fxLayoutAlign="center center">
     <div class="board" fxFlex fxLayout="column">
-      <div class="board-row" fxFlex="12%" fxLayout="row" *ngFor="let row of board.cells">
+      <div class="board-row" fxFlex="12.5%" fxLayout="row" *ngFor="let row of board.cells">
         <div fxFlex fxLayoutAlign="center center" class="cell" [ngClass]="cell.colour" *ngFor="let cell of row; let i = index" (click)="selectedCell(cell)">
           <div *ngIf="cell.content" [innerHTML]="cell.content"></div>
         </div>
